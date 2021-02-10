@@ -61,6 +61,5 @@ def get_args():
     parser.add_argument('--mst', action='store_true', help='multi-scale testing')
     #parser.add_argument('--minorcrop', action='store_true', help='minor crop augmentation')
 
-    #args = parser.parse_args()
-    args = parser.parse_args(args=[])
+    args = parser.parse_args()
     return args
