@@ -1,0 +1,73 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sun Apr 18 15:06:11 2021
+
+@author: user
+"""
+
+
+'''
+#15649
+n,m =map(int, input().split())
+
+res=[]
+
+def seq():
+    if len(res)==m:
+        print(' '.join(map(str,res)))
+        return
+    
+    for i in range(1,n+1):
+        if i in res:
+            continue
+        res.append(i)
+        seq()
+        res.pop()
+        
+seq()
+'''
+'''
+
+#15650
+n,m =map(int, input().split())
+visited=[False]*n
+res=[]
+
+def seq(depth,idx,n,m):
+    if depth==m:
+        print(' '.join(map(str,res)))
+        return
+    
+    for i in range(idx,n):
+        if visited[i]!=True:
+            visited[i]=True
+            res.append(i+1)
+            seq(depth+1,i+1,n,m)
+            visited[i]=False
+            res.pop()
+        
+seq(0,0,n,m)
+
+
+'''
+
+'''
+#15652
+n,m =map(int, input().split())
+
+res=[]
+
+def seq(depth,idx,n,m):
+    if depth==m:
+        print(' '.join(map(str,res)))
+        return
+    
+    for i in range(idx,n):
+            res.append(i+1)
+            seq(depth+1,i,n,m)
+            res.pop()
+        
+seq(0,0,n,m)
+
+'''
+
