@@ -1,0 +1,423 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Tue Apr 13 18:21:26 2021
+
+@author: user
+"""
+
+'''
+N=int(input())
+
+for i in range(N):
+    m=map(int,input().split())
+    m_list=list(m)
+    sum=0
+    for i in range(int(m_list[0])):
+        sum+=m_list[i+1]
+        
+    sum = sum/m_list[0]
+    count=0
+    avg=0
+    for i in m_list[1:]:
+        if i >sum:
+            count+=1
+    avg= count/m_list[0]*100    
+    print(str('%.3f' %(avg)) + "%")
+   
+  '''  
+ 
+
+''' 
+#15596
+
+def sum_func (a):
+    ans=0
+    for i in a :
+        ans+=i
+    print(ans)
+
+b=list(map(int,input().split()))
+sum_func(b)
+
+'''
+'''
+#11720
+b=int(input())
+sum=0
+N=list(map(int,input()))
+
+for i in N:
+    sum+=i
+print(sum)
+'''
+
+'''
+#1157
+word=input().upper()
+word_list=list(set(word))
+cnt_list=[]
+
+for i,k in enumerate (word_list):
+    cnt=word.count(k)
+    cnt_list.append(cnt)
+   
+    
+if cnt_list.count(max(cnt_list))  > 1 :
+    print("?")
+else:
+    max_index=cnt_list.index(max(cnt_list))
+    print(word_list[max_index])
+
+'''
+'''
+#1152
+words=input().split()
+#words=words.strip()
+
+if len(words) != 0 :
+    len_word=len(words)
+    print(len_word)
+else:
+    print("0")
+
+'''
+
+'''
+d = list(map(str, input().split()))
+print(d)
+print(len(d))
+
+'''
+
+'''
+#1712 ???
+A, B, C=map(int,input().split())
+i=1
+while True:
+    
+    point=(A+B*i)/(C*i) 
+    
+    if point>=1:
+        print(point)
+    else:
+        i+=1
+        if
+
+'''
+'''
+#2869 ???
+    
+A,B,V =map(int, input().split())
+
+while True:
+    if (V<=0):
+        break
+    else:
+        up=int(V/A)
+        down=up-1
+        if(down>0):
+            V=V-(B*down)
+print(up)
+'''
+
+'''
+#10872
+
+N=int(input())
+
+
+def factorial(n):
+    fac=1
+    if n>0:
+        fac=n*factorial(n-1)
+    return fac
+
+print(factorial(N))
+
+'''
+'''
+#2447???
+
+N=int(input())
+
+def star(n):
+    Map=[][]
+    
+    if n==3 :
+        Map[0][:3]=Map[2][:3]=[1] * 3
+        Map[1][:3]=[1,0,1]
+
+    else:
+        
+star(N)
+
+'''
+
+'''
+#10870
+n=int(input())
+
+def fibonacci(N):
+    if N>=2:
+        return fibonacci(N-1)+fibonacci(N-2)
+    else:
+        return N             
+    
+
+print(fibonacci(n))
+
+
+'''
+
+'''
+#11729 diff
+N=int(input())
+
+def hanoi(n,a,b,c):
+    if n==1:
+        print(a,c)
+    else:
+        hanoi(n-1,a,c,b)
+        print(a,c)
+        hanoi(n-1,b,a,c)
+
+res=1
+for i in range (1,N):
+    res=res*2 + 1
+print(res)
+hanoi(N,1,2,3)   
+
+'''
+'''
+#2231
+
+N=int(input())
+
+for i in range (1,N+1):
+    a=i//100
+    b=(i-a*100)//10    
+    c=(i-a*100-b*10)
+    if (a+b+c+i)==N :
+        print(i)
+        break
+    if i==N :
+        print(0)
+
+ '''   
+
+
+
+'''
+N=int(input())
+res=0
+for i in range(1,N+1):
+    A=list(map(int,str(i)))
+    res=i+sum(A)
+    if res==N:
+        print(i)
+        break
+    if i==N:
+        print(0)
+
+'''
+'''
+#2798
+
+N,M=map(int,input().split())
+
+N_list=list(map(int, input().split()))
+add_list=[]
+list_sum=[]
+min_list=[]
+
+for i in range(N):
+    add_list.append(N_list[i])
+    for j in range(i+1,N):
+        add_list.append(N_list[j])
+        for k in range(j+1,N):
+            add_list.append(N_list[k])
+            list_sum.append(sum(add_list))
+            add_list.pop()
+          
+        add_list.pop()
+    add_list.pop()
+
+
+set_list_sum=list(set(list_sum))
+set_list_sum.sort()
+
+
+for i in range(len(set_list_sum)):
+    if set_list_sum[i] <= M :
+      min_list.append(set_list_sum[i])  
+print(min_list[-1])
+'''
+'''
+#7568
+N=int(input())
+bulk_list=[]
+
+kg_list=[]
+
+for i in range(N):
+    x,y=map(int,input().split())
+    kg_list.append((x,y))
+    
+
+for i in range(N):
+    cnt=1
+    for j in range(N):
+        if  kg_list[i][0]<kg_list[j][0] and kg_list[i][1]<kg_list[j][1]:
+            cnt+=1
+    bulk_list.append(cnt) 
+
+for i in bulk_list:       
+    print(i, end=' ')
+
+'''
+
+
+
+
+'''
+#1436
+
+N=int(input())
+
+const=666
+cnt=0
+
+while True:
+    if '666' in str(const) :
+        cnt+=1
+        
+    if cnt==N :
+        break
+    const+=1
+
+print(const)
+
+'''
+
+'''
+#2751
+
+N=int(input())
+num=[]
+
+for i in range (N):
+    A=int(input())
+    num.append(A)
+    
+num.sort()
+for i in num:
+    print(i)
+
+'''
+
+
+'''
+#2108
+
+from collections import Counter
+
+def sum_func(num):    
+    sum_=0
+    for i in num:
+        sum_+=i    
+    sum_=round(sum_/N)    
+    print(sum_)
+    
+    
+    
+def mid_func(num):
+    num.sort()
+    n=(int(N/2))
+    print(num[n])
+    
+    
+def cnt_func(num):
+    num.sort()
+    max_list=[]
+    counter=Counter(num).most_common()
+    if len(num) > 1 :
+        if counter[0][1]==counter[1][1] : 
+            print (counter[1][0])
+        else:
+            print(counter[0][0])
+    else:
+        print(counter[0][0])
+
+
+
+
+def ran_func(num):
+    num.sort()
+    print(num[N-1]-num[0])
+
+
+
+N=int(input())
+num=[]
+for i in range (N):
+    num.append(int(input()))
+
+sum_func(num)
+mid_func(num)
+cnt_func(num)
+ran_func(num)
+
+'''
+'''
+#1181
+N=int(input())
+word_list=[]
+sorted_word_list=[]
+for i in range (N):
+    word=str(input())
+    word_list.append(word)
+    
+set_word_list=set(word_list)
+
+for i in set_word_list:   
+    sorted_word_list.append((len(i),i))
+    
+sorted_word_list.sort()
+    
+
+for i in range(len(sorted_word_list)) :
+    print(sorted_word_list[i][1])
+
+'''
+'''
+#10814
+N=int(input())
+name_list=[]
+age_list=[]
+
+for i in range (N):
+    age,name=map(str,input().split())
+    name_list.append((int(age),name))
+  
+name_list.sort(key=lambda x : x[0]) 
+
+for i in name_list:   
+    print(i[0],i[1])
+
+'''
+'''
+#11650
+
+N=int(input())
+xy_list=[]
+
+for i in range(N):
+    x,y=map(int,input().split())
+    xy_list.append((x,y))
+
+xy_list.sort()
+
+for i in  xy_list:    
+    print(i[0],i[1])
+
+'''
